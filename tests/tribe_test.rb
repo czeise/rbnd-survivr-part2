@@ -31,10 +31,10 @@ class TestTribe < Minitest::Test
     refute_empty output[0]
   end
   
-  # def test_tribe_to_s
-  #   assert_output(@coyopa.name) {print "#{@coyopa}"}
-  # end
-  #
+  def test_tribe_to_s
+    assert_output(@coyopa.name) {print "#{@coyopa}"}
+  end
+  
   # def test_tribal_council_immune_is_not_voted_off
   #   voted_off_arr = []
   #   immune = @coyopa.members.first

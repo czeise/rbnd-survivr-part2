@@ -10,4 +10,8 @@ class Tribe
       puts "- #{member}"
     end
   end
+
+  def to_s
+    @name
+  end
 end
