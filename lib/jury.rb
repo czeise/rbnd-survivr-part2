@@ -1,4 +1,4 @@
-# Defines the Jury for the survivr game and gives it the ability to vote on the
+# Defines the jury for the survivr game and gives it the ability to vote on the
 # finalists and declare a winner.
 class Jury
   attr_accessor :members

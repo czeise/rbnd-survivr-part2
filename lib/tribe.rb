@@ -1,3 +1,4 @@
+# Defines the tribe and the tribal council voting process for the survivr game.
 class Tribe
   attr_reader :name, :members
 
@@ -13,5 +14,9 @@ class Tribe
 
   def to_s
     @name
+  end
+
+  def tribal_council(immune)
+    @members.select { |member| member != immune }.sample
   end
 end

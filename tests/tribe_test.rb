@@ -35,17 +35,17 @@ class TestTribe < Minitest::Test
     assert_output(@coyopa.name) {print "#{@coyopa}"}
   end
   
-  # def test_tribal_council_immune_is_not_voted_off
-  #   voted_off_arr = []
-  #   immune = @coyopa.members.first
-  #   100.times do
-  #     voted_off_arr << @coyopa.tribal_council(immune)
-  #   end
-  #   refute_includes voted_off_arr, immune
-  # end
-  #
-  # def test_tribal_council_returns_who_was_voted_off
-  #   immune = @coyopa.members.first
-  #   assert_equal 1, [@coyopa.tribal_council(immune)].count
-  # end
+  def test_tribal_council_immune_is_not_voted_off
+    voted_off_arr = []
+    immune = @coyopa.members.first
+    100.times do
+      voted_off_arr << @coyopa.tribal_council(immune)
+    end
+    refute_includes voted_off_arr, immune
+  end
+  
+  def test_tribal_council_returns_who_was_voted_off
+    immune = @coyopa.members.first
+    assert_equal 1, [@coyopa.tribal_council(immune)].count
+  end
 end
