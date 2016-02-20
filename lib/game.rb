@@ -16,4 +16,13 @@ class Game
   def clear_tribes
     @tribes = []
   end
+
+  def merge(name)
+    members = []
+    @tribes.each do |tribe|
+      members += tribe.members
+    end
+
+    Tribe.new(name: name, members: members)
+  end
 end
