@@ -1,3 +1,4 @@
+# Defines contestants for the survivr game
 class Contestant
   attr_reader :name
 
