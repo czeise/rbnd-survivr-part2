@@ -18,10 +18,10 @@ class TestTribe < Minitest::Test
     assert_respond_to @coyopa, :name
   end
 
-  # def test_tribe_has_members
-  #   assert_respond_to @coyopa, :members
-  # end
-  #
+  def test_tribe_has_members
+    assert_respond_to @coyopa, :members
+  end
+  
   # def test_initialize_puts_tribe_creation
   #   contestants = ["person_one", "person_two"]
   #   contestants.map!{ |contestant| Contestant.new(contestant) }
