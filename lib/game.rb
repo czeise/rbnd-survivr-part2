@@ -1,3 +1,4 @@
+# Defines the game mechanics of the survivr game and manages the game's tribes
 class Game
   attr_reader :tribes
 
@@ -23,6 +24,14 @@ class Game
       members += tribe.members
     end
 
-    Tribe.new(name: name, members: members)
+    clear_tribes
+
+    add_tribe(Tribe.new(name: name, members: members))
+
+    @tribes[0]
+  end
+
+  def individual_immunity_challenge
+    @tribes[0].members.sample
   end
 end
