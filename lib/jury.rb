@@ -1,3 +1,5 @@
+# Defines the Jury for the survivr game and gives it the ability to vote on the
+# finalists and declare a winner.
 class Jury
   attr_accessor :members
 
@@ -29,5 +31,9 @@ class Jury
     votes.each do |finalist, total_votes|
       puts "#{finalist} received #{total_votes} votes"
     end
+  end
+
+  def announce_winner(votes)
+    votes.max_by { |_finalists, total_votes| total_votes }[0]
   end
 end
