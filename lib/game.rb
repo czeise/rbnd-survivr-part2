@@ -8,4 +8,8 @@ class Game
   def add_tribe(tribe)
     @tribes.push(tribe)
   end
+
+  def immunity_challenge
+    @tribes.sample
+  end
 end
