@@ -12,4 +12,8 @@ class Game
   def immunity_challenge
     @tribes.sample
   end
+
+  def clear_tribes
+    @tribes = []
+  end
 end
