@@ -11,7 +11,10 @@ class Game
   end
 
   def immunity_challenge
-    @tribes.sample
+    losing_tribe = @tribes.sample
+    puts "#{losing_tribe} has lost the immunity challenge and must vote out a "\
+         'member.'
+    losing_tribe
   end
 
   def clear_tribes
@@ -32,6 +35,9 @@ class Game
   end
 
   def individual_immunity_challenge
-    @tribes[0].members.sample
+    winner = @tribes[0].members.sample
+    puts "#{winner} has won the individual immunity challenge and is immune "\
+         'from being eliminated.'
+    winner
   end
 end

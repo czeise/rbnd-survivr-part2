@@ -3,6 +3,15 @@ require_relative "tribe"
 require_relative "contestant"
 require_relative "jury"
 
+# For formatting the text a bit nicer...
+def print_header(string)
+  puts '*' * 80
+  puts string.center(80)
+  puts '*' * 80
+end
+
+print_header('Welcome to Survivr!')
+
 #After your tests pass, uncomment this code below
 #=========================================================
 # Create an array of twenty hopefuls to compete on the island of Borneo
@@ -40,12 +49,21 @@ end
 
 # If all the tests pass, the code below should run the entire simulation!!
 #=========================================================
+print_header('Phase One: Pre-Merge')
 phase_one #8 eliminations
+
+print_header('Phase Two: Merge')
 @merge_tribe = @borneo.merge("Cello") # After 8 eliminations, merge the two tribes together
 phase_two #3 more eliminations
 @jury = Jury.new
+
+print_header('Phase Three: Jury Phase')
 phase_three #7 elminiations become jury members
 finalists = @merge_tribe.members #set finalists
+
+print_header("The finalists are #{finalists[0]} and #{finalists[1]}.")
 vote_results = @jury.cast_votes(finalists) #Jury members report votes
 @jury.report_votes(vote_results) #Jury announces their votes
+
+print_header('And the winner is...')
 @jury.announce_winner(vote_results) #Jury announces final winner

@@ -17,6 +17,8 @@ class Tribe
   end
 
   def tribal_council(immune)
-    @members.delete(@members.select { |member| member != immune }.sample)
+    loser = @members.select { |member| member != immune }.sample
+    puts "#{@name} has voted off #{loser}."
+    @members.delete(loser)
   end
 end

@@ -8,6 +8,7 @@ class Jury
   end
 
   def add_member(member)
+    puts "#{member} has been added to the jury."
     @members << member
   end
 
@@ -21,7 +22,7 @@ class Jury
     @members.each do |member|
       vote = finalists.sample
       votes[vote] += 1
-      puts "#{member} votes for #{vote}"
+      puts "#{member} votes for #{vote}."
     end
 
     votes
@@ -29,11 +30,13 @@ class Jury
 
   def report_votes(votes)
     votes.each do |finalist, total_votes|
-      puts "#{finalist} received #{total_votes} votes"
+      puts "#{finalist} received #{total_votes} votes."
     end
   end
 
   def announce_winner(votes)
-    votes.max_by { |_finalists, total_votes| total_votes }[0]
+    winner = votes.max_by { |_finalists, total_votes| total_votes }[0]
+    puts "#{winner} has won Survivr!"
+    winner
   end
 end
