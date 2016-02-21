@@ -10,6 +10,7 @@ class Tribe
     @members.each do |member|
       puts "- #{member}"
     end
+    puts
   end
 
   def to_s
