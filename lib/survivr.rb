@@ -2,12 +2,13 @@ require_relative "game"
 require_relative "tribe"
 require_relative "contestant"
 require_relative "jury"
+require 'colorizr'
 
 # For formatting the text a bit nicer...
 def print_header(string)
-  puts '*' * 80
+  puts '*'.white * 80
   puts string.center(80)
-  puts '*' * 80
+  puts '*'.white * 80
 end
 
 print_header('Welcome to Survivr!')
