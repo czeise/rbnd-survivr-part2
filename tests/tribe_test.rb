@@ -21,7 +21,7 @@ class TestTribe < Minitest::Test
   def test_tribe_has_members
     assert_respond_to @coyopa, :members
   end
-  
+
   def test_initialize_puts_tribe_creation
     contestants = ["person_one", "person_two"]
     contestants.map!{ |contestant| Contestant.new(contestant) }
@@ -30,11 +30,11 @@ class TestTribe < Minitest::Test
     end
     refute_empty output[0]
   end
-  
+
   def test_tribe_to_s
     assert_output(@coyopa.name) {print "#{@coyopa}"}
   end
-  
+
   def test_tribal_council_immune_is_not_voted_off
     voted_off_arr = []
     immune = @coyopa.members.first
@@ -43,9 +43,9 @@ class TestTribe < Minitest::Test
     end
     refute_includes voted_off_arr, immune
   end
-  
+
   def test_tribal_council_returns_who_was_voted_off
     immune = @coyopa.members.first
-    assert_equal 1, [@coyopa.tribal_council(immune)].count
+    assert_instance_of Contestant, @coyopa.tribal_council(immune: immune)
   end
 end
