@@ -31,21 +31,21 @@ print_header('Welcome to Survivr!')
 #This is where you will write your code for the three phases
 def phase_one
   8.times do
-    @borneo.immunity_challenge.tribal_council('')
+    @borneo.immunity_challenge.tribal_council()
     puts
   end
 end
 
 def phase_two
   3.times do
-    @merge_tribe.tribal_council(@borneo.individual_immunity_challenge)
+    @merge_tribe.tribal_council(immune: @borneo.individual_immunity_challenge)
     puts
   end
 end
 
 def phase_three
   7.times do
-    @jury.add_member(@merge_tribe.tribal_council(@borneo.individual_immunity_challenge))
+    @jury.add_member(@merge_tribe.tribal_council(immune: @borneo.individual_immunity_challenge))
     puts
   end
 end
